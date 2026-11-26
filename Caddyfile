@@ -1,0 +1,29 @@
+# ==============================================================================
+# Doria Reverse Proxy (Caddy)
+# Local development uses DORIA_DOMAIN=:80 (exposed on host port 8080).
+# For custom domain HTTPS in production, set DORIA_DOMAIN=doria.yourdomain.com
+# and expose ports 80:80 and 443:443; Caddy provisions TLS automatically.
+# ==============================================================================
+
+{$DORIA_DOMAIN::80} {
+	encode gzip zstd
+
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	handle /api/* {
+		reverse_proxy api:4000
+	}
+
+	handle /ws {
+		reverse_proxy api:4000
+	}
+
+	handle {
+		reverse_proxy web:80
+	}
+}

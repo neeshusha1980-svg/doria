@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "Doria",
+  "short_name": "Doria",
+  "description": "Discover games, build worlds and share your creations.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#171622",
+  "theme_color": "#171622",
+  "icons": [
+    {
+      "src": "/doria-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

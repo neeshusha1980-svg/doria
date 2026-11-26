@@ -1,0 +1,43 @@
+/* Doria creator features */
+.ugc-model-builder,.badge-create-form{display:grid;gap:16px}
+.ugc-builder-heading,.ugc-builder-layout,.ugc-part-row,.badge-upload-row,.badge-live-preview{display:flex;gap:16px;align-items:center;justify-content:space-between}
+.ugc-builder-layout{align-items:stretch;display:grid;grid-template-columns:minmax(220px,.85fr) minmax(300px,1.3fr)}
+.ugc-builder-controls{display:grid;align-content:start;gap:11px}
+.ugc-builder-controls label,.badge-form-grid label{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+.ugc-builder-controls input,.ugc-builder-controls select,.badge-form-grid input,.badge-form-grid select,.badge-form-grid textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--text)}
+.ugc-shape-palette{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.ugc-shape-palette button{display:grid;justify-items:center;gap:4px;padding:9px 4px;background:var(--panel2);border:1px solid var(--line);border-radius:10px}
+.ugc-shape-palette button.selected{border-color:var(--purple);background:#9b7bff22}
+.ugc-shape-palette small{font-size:10px;color:var(--muted)}
+.ugc-builder-preview{min-height:310px;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#171526}
+.ugc-model-preview{width:100%;height:270px;min-height:230px;overflow:hidden}
+.ugc-model-preview canvas{display:block;width:100%;height:100%}
+.ugc-preview-caption{display:flex;justify-content:space-between;gap:10px;padding:10px 13px;color:#d9d4ef;font-size:11px}
+.ugc-preview-caption span,.badge-live-preview span{font-weight:700;letter-spacing:1px;color:#b8a6ff}
+.ugc-part-count,.badge-total{padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px}
+.ugc-parts-list{display:grid;gap:8px}
+.ugc-part-row{padding:9px 10px;border:1px solid var(--line);border-radius:10px;flex-wrap:wrap}
+.ugc-part-row label{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}
+.ugc-part-row input[type=range]{width:110px}
+.ugc-part-row input[type=color]{width:34px;height:28px;padding:0;border:0;background:none}
+.ugc-model-card-art{height:100px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;background:radial-gradient(circle at 50% 35%,#54466d,#211e31 72%);overflow:hidden}
+.ugc-model-card-art span{width:38px;height:38px;border-radius:12px;transform:rotate(35deg) skew(-8deg);box-shadow:12px 10px 0 #ffffff24,0 0 25px currentColor}
+.ugc-model-card-art small{font-size:10px;letter-spacing:1px;color:#d4c9ff}
+.badge-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.badge-form-grid .badge-description{grid-column:1/-1}
+.badge-form-grid textarea{min-height:70px;resize:vertical}
+.badge-upload{display:flex;align-items:center;gap:10px;padding:12px;border:1px dashed #7966b4;border-radius:12px;cursor:pointer;min-width:0}
+.badge-upload input{display:none}
+.badge-upload span{overflow-wrap:anywhere;color:var(--muted);font-size:12px}
+.badge-live-preview{justify-content:flex-start;gap:15px;padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}
+.badge-live-preview>div{display:grid;gap:5px}
+.badge-live-preview small{color:var(--muted)}
+.badge-live-preview img{width:86px;height:86px;object-fit:contain;border-radius:10px;background:#171526}
+.doria-badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:13px}
+.doria-badge-tile{display:grid;justify-items:center;align-content:start;gap:7px;min-width:0;padding:13px 9px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);text-align:center}
+.doria-badge-tile b{font-size:12px}
+.doria-badge-tile small{font-size:10px;line-height:1.35;color:var(--muted)}
+.doria-badge-tile.locked{opacity:.62;filter:saturate(.6)}
+.doria-badge-tile.earned{border-color:#8bdbb6}
+.doria-badge-art{width:82px;height:82px;object-fit:contain;filter:drop-shadow(0 4px 5px #0005)}
+@media(max-width:760px){.ugc-builder-layout{grid-template-columns:1fr}.ugc-builder-preview{min-height:270px}.badge-form-grid{grid-template-columns:1fr}.badge-form-grid .badge-description{grid-column:auto}.ugc-builder-heading{align-items:flex-start;flex-direction:column}}

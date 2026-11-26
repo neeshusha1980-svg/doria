@@ -1,0 +1,16 @@
+{
+  "name": "doria-independent",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm --workspace=@doria/api run dev",
+    "dev:web": "npm --workspace=@doria/web run dev",
+    "build": "npm --workspace=@doria/api run build && npm --workspace=@doria/web run build",
+    "typecheck": "npm --workspace=@doria/api run typecheck && npm --workspace=@doria/web run typecheck",
+    "db:migrate": "npm --workspace=@doria/api run db:migrate",
+    "test": "npm --workspace=@doria/api run test && npm --workspace=@doria/web run test"
+  }
+}

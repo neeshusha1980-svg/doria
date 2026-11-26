@@ -1,0 +1,145 @@
+[
+  {
+    "name": "Sign in, discover Doria and retain profile changes",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "authentication",
+      "username setup",
+      "returning-user username persistence",
+      "published public Discover feed",
+      "private and unpublished game exclusion",
+      "game search and genre filters",
+      "server-persisted profile display name and bio",
+      "Privacy Policy navigation"
+    ],
+    "description": "Verifies account restoration, public game discovery and durable profile updates.",
+    "steps": [
+      "Open Doria and sign in or create an account",
+      "Complete username setup if requested",
+      "Search for a published public game and apply a genre filter",
+      "Verify private or unpublished games are not present in Discover",
+      "Open Profile, update display name and bio, save, then refresh",
+      "Open the Privacy Policy and review its sections",
+      "Sign out and sign back in with the same account",
+      "Verify the saved username and profile fields remain available"
+    ],
+    "expected": "The player can sign in, discover only public published games, and retain profile changes across sessions."
+  },
+  {
+    "name": "Create and publish Neo and Baseplate worlds",
+    "viewport": "desktop",
+    "covers": [
+      "Neo AI generation",
+      "game prompt and genre validation",
+      "sandboxed playable game output",
+      "creator game listings",
+      "shared published game feed",
+      "server-awarded World Maker achievement",
+      "Baseplate scene persistence",
+      "saved Baseplate object rendering in the 3D world viewer",
+      "published game multiplayer room authorization",
+      "unique daily play counts"
+    ],
+    "description": "Verifies both game creation paths save their content and expose the correct published world experience.",
+    "steps": [
+      "Sign in as Actor A and open Doria Studio",
+      "Choose Use Neo and enter a game name, genre and gameplay description",
+      "Generate and publish the game",
+      "Verify the game appears in Actor A's creations as published",
+      "Verify Actor A earns the World Maker achievement",
+      "Sign in as Actor B and verify the new game appears in Discover",
+      "Open the Neo game and interact with its main control",
+      "Verify the account's daily unique play count is recorded once even if the same player reopens the world",
+      "Create a second world using Start from Baseplate and place at least two objects",
+      "Publish the Baseplate world, open it from Discover and verify the saved objects render in the 3D viewer"
+    ],
+    "expected": "Neo output runs in an isolated sandbox, published listings are shared, daily unique play metrics are recorded once per account, and Baseplate objects persist and render in the creator-world viewer."
+  },
+  {
+    "name": "Protect administrator access and player safety workflows",
+    "viewport": "desktop",
+    "covers": [
+      "authenticated API access",
+      "verified-email administrator allowlist",
+      "admin-only Plus entitlement changes",
+      "admin game editing and deletion",
+      "community reports and moderation",
+      "guardian invitation and email match",
+      "guardian settings enforcement",
+      "friend request consent",
+      "user blocking",
+      "Moments video upload validation",
+      "manual account deletion request"
+    ],
+    "description": "Verifies privileged actions require a verified administrator account and player safety controls remain server-enforced.",
+    "steps": [
+      "Open Doria Admin Portal while signed out and attempt a protected action",
+      "Sign in with an administrator email from the configured verified-email allowlist",
+      "Open Games, edit a game description and save it",
+      "Delete a test game after confirming the destructive action",
+      "Sign in with a normal non-admin account and verify admin APIs are denied",
+      "Create a guardian invitation, accept it from the matching signed-in email, and change a safety setting",
+      "Verify the player's restricted action is rejected by the backend",
+      "Submit a community report and verify an administrator can resolve it"
+    ],
+    "expected": "Only configured verified administrator accounts can access admin data and moderation actions; non-admin accounts remain denied and guardian controls are enforced by the backend."
+  },
+  {
+    "name": "Create UGC, publish badges and retain avatar appearance",
+    "viewport": "desktop",
+    "covers": [
+      "interactive 3D UGC modeling",
+      "multi-part model validation",
+      "UGC marketplace persistence",
+      "graphic badge catalog",
+      "creator badge creation",
+      "badge image upload validation",
+      "game-specific badge awards",
+      "server-persisted avatar appearance",
+      "avatar preference validation",
+      "cross-session avatar restoration"
+    ],
+    "description": "Verifies creator assets, badges and player appearance are persisted and restored correctly.",
+    "steps": [
+      "Sign in and open Avatar Studio",
+      "Add multiple 3D shapes, change colours and scales, and inspect the rotating preview",
+      "Name the item, set a Starlits price and publish it",
+      "Refresh the marketplace and verify the model and its part count remain visible",
+      "Open Doria Studio and create a named badge attached to the creator's published game",
+      "Choose a graphic medal style and upload a valid PNG, JPG or WebP badge image",
+      "Publish the badge and verify it appears in the badge gallery",
+      "Choose a body colour, glow colour and accessory in Avatar Studio and save",
+      "Reload Doria and verify the saved avatar appearance is restored from the account",
+      "Submit an unsupported avatar colour to the avatar endpoint and verify the request is rejected"
+    ],
+    "expected": "UGC models and badges persist, supported game badges are awarded, and valid avatar preferences restore across sessions while invalid preferences are rejected."
+  },
+  {
+    "name": "Purchase a gamepass from inside its game",
+    "viewport": "mobile",
+    "covers": [
+      "in-game gamepass shop",
+      "game-specific pass catalog",
+      "gamepass ownership persistence",
+      "Starlits purchase transaction",
+      "gamepass game ownership binding",
+      "removed gamepass purchase rejection",
+      "speed, jump or crystal gameplay effect"
+    ],
+    "description": "Verifies a creator-defined gamepass is only purchasable in its own game and grants its configured effect.",
+    "setup": [
+      "Actor A publishes a game and creates a speed boost or double crystals gamepass for it."
+    ],
+    "steps": [
+      "Sign in as Actor B with enough Starlits",
+      "Open Actor A's game and open Gamepasses from the in-game header",
+      "Purchase the creator's pass",
+      "Verify it changes to Owned without leaving the game",
+      "Start or restart the supported voxel game and verify the pass effect is active",
+      "Close and reopen the game and verify ownership remains",
+      "Attempt to purchase the same pass while submitting a different game id and verify the server rejects the request"
+    ],
+    "expected": "The pass is purchased once, Starlits are deducted once, ownership persists, the effect applies in the correct game, and cross-game purchase attempts are rejected."
+  }
+]
